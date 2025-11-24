@@ -217,9 +217,8 @@ const App: React.FC = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-4"/><path d="M8 18v-2"/><path d="M16 18v-6"/></svg>
              </div>
              <div>
-               <h1 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-emerald-400 bg-clip-text text-transparent">Grandmaster IO</h1>
-               <div className="flex items-center gap-2 text-xs text-slate-400">
-                  <span className={`w-2 h-2 rounded-full ${game.turn() === 'w' ? 'bg-white' : 'bg-slate-600'}`}></span>
+               <div className="flex items-center gap-2 text-sm text-slate-300 font-medium">
+                  <span className={`w-3 h-3 rounded-full ${game.turn() === 'w' ? 'bg-white' : 'bg-slate-600'}`}></span>
                   {game.turn() === 'w' ? "White's Turn" : "Black's Turn"}
                   {isAiThinking && <span className="text-indigo-400 ml-2 animate-pulse">AI is thinking...</span>}
                </div>
@@ -317,30 +316,7 @@ const App: React.FC = () => {
             </button>
         </div>
 
-        {/* User Info / Turn Indicator (Pseudo-auth UI) */}
-        <div className="flex gap-4">
-             {/* Opponent (Top) */}
-             <div className="flex-1 bg-slate-800 p-4 rounded-xl border border-slate-700 flex flex-col gap-2 relative overflow-hidden">
-                <div className="flex items-center gap-3 relative z-10">
-                    <img src={gameMode === 'PvAI' ? "https://robohash.org/opponent?set=set1" : "https://picsum.photos/40/40?random=2"} alt="Black" className="w-10 h-10 rounded-full border-2 border-slate-600" />
-                    <div>
-                        <p className="font-semibold text-slate-200">{gameMode === 'PvAI' ? 'MCTS Bot' : 'Opponent'}</p>
-                    </div>
-                </div>
-                {game.turn() === 'b' && <div className="absolute top-0 right-0 w-2 h-full bg-emerald-500 animate-pulse"></div>}
-             </div>
-
-             {/* Player (Bottom) */}
-             <div className="flex-1 bg-slate-800 p-4 rounded-xl border border-slate-700 flex flex-col gap-2 relative overflow-hidden">
-                <div className="flex items-center gap-3 relative z-10">
-                    <img src="https://picsum.photos/40/40?random=1" alt="White" className="w-10 h-10 rounded-full border-2 border-indigo-500" />
-                    <div>
-                        <p className="font-semibold text-slate-200">You</p>
-                    </div>
-                </div>
-                {game.turn() === 'w' && <div className="absolute top-0 right-0 w-2 h-full bg-emerald-500 animate-pulse"></div>}
-             </div>
-        </div>
+        {/* User Info Removed */}
 
         {/* Stats & History */}
         <div className="bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-700 flex-1 flex flex-col min-h-[300px]">
