@@ -1,0 +1,5 @@
+{
+  "name": "chess_open_spiel",
+  "description": "A premium Player vs Player chess experience featuring real-time material analysis and AI-powered position insights using Gemini 2.5 Flash.",
+  "requestFramePermissions": []
+}
